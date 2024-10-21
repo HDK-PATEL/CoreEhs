@@ -1,7 +1,6 @@
 ﻿using CoreEhs.BussinessLayer.DBHelper;
 using CoreEhs.Interface;
 using CoreEhs.Model;
-using CoreEhs.Model.Enum;
 using CoreEhs.Modell;
 using System.Data;
 

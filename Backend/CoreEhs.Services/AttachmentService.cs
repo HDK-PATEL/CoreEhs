@@ -1,8 +1,5 @@
 ﻿using CoreEhs.Interface;
 using CoreEhs.Model;
-using CoreEhs.Model.Enum;
-using Microsoft.AspNetCore.Hosting.Internal;
-using Microsoft.AspNetCore.Http;
 
 namespace CoreEhs.Services;
 

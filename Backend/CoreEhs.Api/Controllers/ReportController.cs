@@ -7,7 +7,7 @@ namespace CoreEhs.Api.Controllers;
 
 [Route("api/v1/report")]
 [ApiController]
-//[Authorize]
+[Authorize]
 public class ReportController(IReportService service) : ControllerBase
 {
     [Route("salesman-commission-figure")]

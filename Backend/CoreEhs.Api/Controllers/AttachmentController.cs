@@ -1,6 +1,7 @@
 ﻿using CoreEhs.Interface;
 using CoreEhs.Model;
 using CoreEhs.Model.Enum;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ namespace CoreEhs.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AttachmentController : ControllerBase
     {
 

@@ -10,7 +10,7 @@ namespace CoreEhs.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class CarController(ICarService service) : ControllerBase
     {
         [HttpGet]

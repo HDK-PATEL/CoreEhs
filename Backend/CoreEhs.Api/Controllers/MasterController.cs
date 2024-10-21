@@ -8,7 +8,7 @@ namespace CoreEhs.Api.Controllers;
 
 [Route("api/v1/master")]
 [ApiController]
-//[Authorize]
+[Authorize]
 public class MasterController(IMasterService service) : ControllerBase
 {
     [Route("brand")]
