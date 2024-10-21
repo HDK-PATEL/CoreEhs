@@ -1,0 +1,58 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Salesman</th>
+      <th scope="col">Audi</th>
+      <th scope="col">Jaguar</th>
+      <th scope="col">LandRover</th>
+      <th scope="col">Renault</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of ReportData; track $index) {
+      
+      <tr>
+        <td>{{item.Salesman}}</td>
+        <td>{{item.Audi}}</td>
+        <td>{{item.Jaguar}}</td>
+        <td>{{item.LandRover}}</td>
+        <td>{{item.Renault}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
+
+<section class="example-container mat-elevation-z8" tabindex="0">
+  <table mat-table [dataSource]="ReportData">
+
+    <ng-container matColumnDef="Salesman">
+      <th mat-header-cell *matHeaderCellDef> Salesman </th>
+      <td mat-cell *matCellDef="let element"> {{element.Salesman}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Audi">
+      <th mat-header-cell *matHeaderCellDef> Audi </th>
+      <td mat-cell *matCellDef="let element"> {{element.Audi}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Jaguar">
+      <th mat-header-cell *matHeaderCellDef> Jaguar </th>
+      <td mat-cell *matCellDef="let element"> {{element.Jaguar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="LandRover">
+      <th mat-header-cell *matHeaderCellDef> LandRover </th>
+      <td mat-cell *matCellDef="let element"> {{element.LandRover}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Renault">
+      <th mat-header-cell *matHeaderCellDef> Renault </th>
+      <td mat-cell *matCellDef="let element"> {{element.Renault}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>

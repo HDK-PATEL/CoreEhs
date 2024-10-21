@@ -1,0 +1,85 @@
+<form [formGroup]="carModelForm" (ngSubmit)="onSubmit()" class="form-container">
+  <mat-toolbar>Add Car Details</mat-toolbar>
+  <hr>
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Brand</mat-label>
+      <mat-select formControlName="brandId">
+        <mat-option *ngFor="let brand of brands" [value]="brand.Id">{{ brand.Name }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="carModelForm.get('brand')?.hasError('required')">Brand is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Class</mat-label>
+      <mat-select formControlName="classId">
+        <mat-option *ngFor="let classItem of classes" [value]="classItem.Id">{{ classItem.Name }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="carModelForm.get('class')?.hasError('required')">Class is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Model Name</mat-label>
+      <input matInput formControlName="modelName" placeholder="Model Name" />
+      <mat-error *ngIf="carModelForm.get('modelName')?.hasError('required')">Model Name is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Model Code</mat-label>
+      <input matInput formControlName="modelCode" placeholder="Model Code" />
+      <mat-error *ngIf="carModelForm.get('modelCode')?.hasError('required')">Model Code is required</mat-error>
+      <mat-error *ngIf="carModelForm.get('modelCode')?.hasError('pattern')">Model Code must be 10 alphanumeric characters</mat-error>
+    </mat-form-field>
+
+
+  
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Enter Description"></textarea>
+      <mat-error *ngIf="carModelForm.get('description')?.hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Features</mat-label>
+      <textarea matInput formControlName="features" placeholder="Enter Features"></textarea>
+      <mat-error *ngIf="carModelForm.get('features')?.hasError('required')">Features are required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" placeholder="Price" />
+      <mat-error *ngIf="carModelForm.get('price')?.hasError('required')">Price is required</mat-error>
+      <mat-error *ngIf="carModelForm.get('price')?.hasError('pattern')">Please enter a valid price</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Date of Manufacturing</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfManufacturing" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="carModelForm.get('dateOfManufacturing')?.hasError('required')">Date of Manufacturing is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field-width">
+      <mat-label>Sort Order</mat-label>
+      <input matInput formControlName="sortOrder" placeholder="Sort Order" />
+      <mat-error *ngIf="carModelForm.get('sortOrder')?.hasError('required')">Sort Order is required</mat-error>
+      <mat-error *ngIf="carModelForm.get('sortOrder')?.hasError('pattern')">Sort Order must be a number</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row" class="form-field-width">
+    <mat-checkbox formControlName="active">Active</mat-checkbox>
+  </div>
+
+
+  <div class="form-row" style="margin-top:  30px;">
+    <button mat-raised-button color="primary" type="submit" [disabled]="carModelForm.invalid">Submit</button>
+  </div>
+</form>
