@@ -21,7 +21,7 @@ export const routes: Routes = [
             {
                 path : "add-car",
                 component : AddCarComponent,
-                canActivate: [AuthGuard]
+                //canActivate: [AuthGuard]
             },
             {
                 path : "car-list",

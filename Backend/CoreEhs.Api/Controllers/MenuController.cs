@@ -8,7 +8,7 @@ namespace CoreEhs.Api.Controllers;
 
 [Route("api/v1/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class MenuController(IMenuService service) : ControllerBase
 {
     [HttpGet]

@@ -1,3 +1,92 @@
+<div class="card">
+  <div class="card-header">
+    <span class="h-25">Add New Car</span>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="row">
+          <div class="card-md-12">
+            <label for="">Brand <span class="text-danger">*</span></label>
+            <select name="Brand" id="" class="form-control">
+              <option value="1">Audi</option>
+              <option value="2">Jaguar</option>
+              <option value="3">LandRover</option>
+              <option value="4">Ranault</option>
+            </select>
+          </div>
+          <br>
+          <div class="col-md-12">
+            <label for="">Class <span class="text-danger">*</span></label>
+            <select name="Class" id="" class="form-control">
+              <option value="1">Class A</option>
+              <option value="2">Class B</option>
+              <option value="3">Class C</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="">Car Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <br>
+          <div class="col-md-6">
+            <label for="">Car Code <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <br>
+          <div class="col-md-4">
+            <label for="">Price <span class="text-danger">*</span></label>
+            <input type="number" class="form-control">
+          </div>
+          <br>
+          <div class="col-md-4">
+            <label class="form-label">Date Of Manufacturing<span class="text-danger">*</span></label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Is Active </label>
+            <input type="checkbox" class="form-check">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <form [formGroup]="carModelForm" (ngSubmit)="onSubmit()" class="form-container">
   <mat-toolbar>Add Car Details</mat-toolbar>
   <hr>

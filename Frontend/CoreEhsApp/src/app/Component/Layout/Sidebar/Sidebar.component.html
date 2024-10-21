@@ -9,18 +9,14 @@
       </div>
       <div class="col-md-2">
         <button routerLink="/login" class="btn btn-primary btn-sm ">Login</button>
-        <button routerLink="/login" class="btn btn-danger btn-sm ">Logout</button>
+        <button routerLink="/login" class="btn btn-danger btn-sm " (click)="Logout()" >Logout</button>
       </div>
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container 
-                        class="example-sidenav-container"
-                        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
-                style="background-color: rgb(223, 223, 223);" 
-                >
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" style="background-color: rgb(223, 223, 223);">
       <mat-nav-list *ngFor="let menu of menuList">
         <!-- Corrected routerLink syntax for dynamic links -->
         <a mat-list-item [routerLink]="[menu.link]">{{menu.menuName}}</a>
@@ -28,14 +24,14 @@
     </mat-sidenav>
 
     <div class="box">
-      
+
     </div>
     <mat-sidenav-content>
-      <div class="box">
+      <div class="box container-fluid">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
-    
+
   </mat-sidenav-container>
 </div>
 <!-- } @else {

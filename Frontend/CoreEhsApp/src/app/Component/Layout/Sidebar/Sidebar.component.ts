@@ -10,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
 import { IMenuService } from '../../../Services/IMenu.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { IAuthServiceService } from '../../../Services/IAuthService.service';
 
 
 @Component({
@@ -30,7 +31,7 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent implements OnDestroy {
   menuList: any =  [];
-
+  Authservice = inject(IAuthServiceService);
 
   ngOnInit() {
     this.getMenu();
@@ -63,6 +64,9 @@ export class SidebarComponent implements OnDestroy {
     })
   }
 
+  Logout(){
+    this.Authservice.logout();
+  }
   // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
 }
